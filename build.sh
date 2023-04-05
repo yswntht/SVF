@@ -170,7 +170,7 @@ if [[ ! -d "$LLVM_DIR" ]]; then
             generic_download_file "$urlLLVM" llvm.tar.xz
             check_xz
             echo "Unzipping llvm package..."
-            mkdir -p "./$LLVMHome" && tar -xf llvm.tar.xz -C "./$LLVMHome" --strip-components 1
+            mkdir -p "./$LLVMHome" && tar -xf llvm.tar.xz --no-same-owner -C "./$LLVMHome" --strip-components 1
             rm llvm.tar.xz
         fi
     fi
